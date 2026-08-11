@@ -24,11 +24,7 @@ jobs:
           token: ${{ secrets.EXPO_TOKEN }}
 
       - name: 4. Instalar dependencias de la app
-        run: |
-          cd collectar-mobile
-          npm ci
+        run: npm ci
 
       - name: 5. Compilar APK en la nube (EAS Cloud)
-        run: |
-          cd collectar-mobile
-          eas build --platform android --profile preview --non-interactive
+        run: eas build --platform android --profile preview --non-interactive
